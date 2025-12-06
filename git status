@@ -1,0 +1,17 @@
+[33mcommit 20998f65163e0b2eae0e6372c0cb60d657aa7f2f[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: arthurzvz <arthurzinnns7@gmail.com>
+Date:   Fri Dec 5 23:13:41 2025 -0300
+
+    Criada a entidade NinjaModel
+
+[33mcommit 197a87f25663921fd2ea424f6e99db0a7bc8d74f[m
+Author: arthurzvz <arthurzinnns7@gmail.com>
+Date:   Thu Dec 4 20:59:42 2025 -0300
+
+    Criado Controller
+
+[33mcommit 52eae58373741496e3e4b895a33816dc69943bda[m
+Author: arthurzvz <arthurzinnns7@gmail.com>
+Date:   Thu Dec 4 19:14:08 2025 -0300
+
+    Initial commit
