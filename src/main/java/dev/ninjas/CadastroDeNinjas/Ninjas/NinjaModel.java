@@ -16,7 +16,10 @@ public class NinjaModel {
     private String cla;
     private String rank;
     private String tecnicas;
-    private List<MissoesModel> missoesModelList;
+
+    @ManyToOne()
+    @JoinColumn(name = "missoes_id")
+    private MissoesModel missoes;
 
     public NinjaModel() {
     }
