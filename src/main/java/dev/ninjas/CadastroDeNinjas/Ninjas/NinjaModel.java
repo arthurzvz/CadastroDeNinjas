@@ -1,6 +1,9 @@
-package dev.ninjas.CadastroDeNinjas;
+package dev.ninjas.CadastroDeNinjas.Ninjas;
 
+import dev.ninjas.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "tb_cadastro")
@@ -13,6 +16,7 @@ public class NinjaModel {
     private String cla;
     private String rank;
     private String tecnicas;
+    private List<MissoesModel> missoesModelList;
 
     public NinjaModel() {
     }
