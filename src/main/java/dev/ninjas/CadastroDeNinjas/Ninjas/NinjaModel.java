@@ -17,11 +17,14 @@ public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+    @Column(name = "nome")
     private String nome;
+    @Column(name = "clã")
     private String cla;
-    private String rank;
-    private String tecnicas;
+    @Column(unique = true,name = "email")
+    private String email;
 
     @ManyToOne()
     @JoinColumn(name = "missoes_id")
