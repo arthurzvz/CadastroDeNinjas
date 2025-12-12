@@ -19,9 +19,10 @@ public class NinjaController {
         return "Minha primeira mensagem com spring";
     }
     @PostMapping("/criar")
-    public String criarNinja(){
-        return "Criar ninja";
+    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+        return ninjaService.criarNinja(ninja);
     }
+
     @GetMapping("/mostrarNinjas/{id}")
     public NinjaModel mostrarNinjaID(@PathVariable Long id){
         return ninjaService.listarNinjaPorId(id);
