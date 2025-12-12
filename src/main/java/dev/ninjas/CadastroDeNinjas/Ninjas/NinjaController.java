@@ -1,5 +1,6 @@
 package dev.ninjas.CadastroDeNinjas.Ninjas;
 
+import jakarta.persistence.Id;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,8 +43,8 @@ public class NinjaController {
     public String alterarNinjaId(){
         return "alterar id do Ninja";
     }
-    @DeleteMapping("/deletarrNinjaId")
-    public String deletarNinjaId(){
-        return "Deletar Ninja por id";
+    @DeleteMapping("/deletarrNinjaId/{id}")
+    public void deletarNinjaId(@PathVariable Long id){
+            ninjaService.deleteNinja(id);
     }
 }
