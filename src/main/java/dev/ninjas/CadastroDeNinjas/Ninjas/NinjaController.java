@@ -22,10 +22,11 @@ public class NinjaController {
     public String criarNinja(){
         return "Criar ninja";
     }
-    @GetMapping("/mostrar")
-    public String mostrarNinjaID(){
-        return "mostrar ninja";
+    @GetMapping("/mostrarNinjas/{id}")
+    public NinjaModel mostrarNinjaID(@PathVariable Long id){
+        return ninjaService.listarNinjaPorId(id);
     }
+
     @GetMapping("/mostrarNinjas")
     public List<NinjaModel> mostrarTodosNinjas(){
         return ninjaService.listarNinjas();
