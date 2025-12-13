@@ -19,6 +19,7 @@ public class NinjaController {
     public String boasVindas(){
         return "Minha primeira mensagem com spring";
     }
+
     @PostMapping("/criar")
     public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
         return ninjaService.criarNinja(ninja);
@@ -39,10 +40,12 @@ public class NinjaController {
     public String mostrarTodosNinja(){
         return "Mostrar todos ninja";
     }
-    @PutMapping("/alterarNinjaId")
-    public String alterarNinjaId(){
-        return "alterar id do Ninja";
+    @PutMapping("/atualizar/{id}")
+    public NinjaModel alterarNinjaId(@PathVariable Long id,@RequestBody NinjaModel ninjaAtualizado){
+        return ninjaService.atualizarNinja(id, ninjaAtualizado);
     }
+
+
     @DeleteMapping("/deletarrNinjaId/{id}")
     public void deletarNinjaId(@PathVariable Long id){
             ninjaService.deleteNinja(id);
