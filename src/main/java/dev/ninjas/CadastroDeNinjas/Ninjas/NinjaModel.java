@@ -25,12 +25,9 @@ public class NinjaModel {
     private String cla;
     @Column(unique = true,name = "email")
     private String email;
+    private String rank;
 
     @ManyToOne()
     @JoinColumn(name = "missoes_id")
     private MissoesModel missoes;
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
