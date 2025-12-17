@@ -1,6 +1,8 @@
 package dev.ninjas.CadastroDeNinjas.Ninjas;
 
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,8 +40,14 @@ public NinjaDTO mostrarNinjaID(@PathVariable Long id){
 
 
 @DeleteMapping("/deletarrNinjaId/{id}")
-public void deletarNinjaId(@PathVariable Long id){
-    ninjaService.deleteNinja(id);
+public ResponseEntity<String> deletarNinjaId(@PathVariable Long id) {
+    if (ninjaService.listarNinjaPorId(id) != null) {
+        ninjaService.deleteNinja(id);
+        return ResponseEntity.ok("Ninja deletado com sucesso");
+    } else {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+        .body("Ninja não existente");
+    }
 }
     @PutMapping("/atualizar/{id}")
     public NinjaDTO alterarNinjaId(@PathVariable Long id,@RequestBody NinjaDTO ninjaAtualizado){
