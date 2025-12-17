@@ -1,5 +1,6 @@
 package dev.ninjas.CadastroDeNinjas.Ninjas;
 
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
