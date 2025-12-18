@@ -1,6 +1,4 @@
 package dev.ninjas.CadastroDeNinjas.Ninjas;
-
-
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -15,8 +13,6 @@ import java.util.List;
 public class NinjaController {
     private final NinjaService ninjaService;
     private NinjaMapper ninjaMapper;
-
-
     public NinjaController(NinjaService ninjaService, NinjaMapper ninjaMapper) {
         this.ninjaService = ninjaService;
         this.ninjaMapper = ninjaMapper;
@@ -30,16 +26,16 @@ public class NinjaController {
 
     @PostMapping("/criar")
     @Operation(summary = "Cria um novo Ninja",description = "Essa rota cria um novo ninja")
-    public ResponseEntity criarNinja(@RequestBody NinjaDTO ninja) {
-        NinjaDTO ninjaDTO = ninjaService.criarNinja(ninja);
+    public ResponseEntity criarNinja(@RequestBody NinjaDTO ninjaDTO) {
+        NinjaDTO ninja = ninjaService.criarNinja(ninjaDTO);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body("Ninja: " + ninjaDTO.getNome() + " criado com sucesso");
+                .body("Ninja: " + ninja.getNome() + " criado com sucesso");
     }
 
 
     @GetMapping("/mostrar")
     @Operation(summary = "Lista todos os Ninjas",description = "Essa rota lista todos os ninjas cadastrados até o momento")
-    public ResponseEntity<List<NinjaDTO>> ninjaDTOS() {
+    public ResponseEntity<List<NinjaDTO>> ninjas() {
         List<NinjaDTO> ninjaDTOList = ninjaService.listarNinjas();
         return ResponseEntity.ok(ninjaDTOList);
     }

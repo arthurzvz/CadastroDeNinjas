@@ -1,9 +1,7 @@
 package dev.ninjas.CadastroDeNinjas.Ninjas;
 
-import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -26,8 +24,8 @@ public class NinjaService {
     }
 
     public NinjaDTO listarNinjaPorId(Long id) {
-        Optional<NinjaModel> ninjaListarId = ninjaRepository.findById(id);
-        return ninjaListarId.map(ninjaMapper::map).orElse(null);
+        Optional<NinjaModel> ninjaPorId = ninjaRepository.findById(id);
+        return ninjaPorId.map(ninjaMapper::map).orElse(null);
     }
 
     public NinjaDTO criarNinja(NinjaDTO ninjaDTO) {
